@@ -1,0 +1,14 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "regions": ["iad1"],
+  "functions": {
+    "app/api/briefs/route.ts": {
+      "maxDuration": 60
+    },
+    "app/api/stories/route.ts": {
+      "maxDuration": 30
+    }
+  }
+}

@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "DM Serif Display", Georgia, serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+  --font-mono: "DM Mono", "Fira Code", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0a0a0f;
+  color: #f0ede6;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #111118;
+}
+::-webkit-scrollbar-thumb {
+  background: #3a3a50;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8888a8;
+}
+
+/* Selection */
+::selection {
+  background: rgba(212, 160, 23, 0.3);
+  color: #f0ede6;
+}
+
+/* Shimmer skeleton */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    #1a1a24 25%,
+    #2a2a38 50%,
+    #1a1a24 75%
+  );
+  background-size: 700px 100%;
+  animation: shimmer 1.8s linear infinite;
+}
+
+/* Sport accent borders */
+.sport-nfl { border-color: #c8392b; }
+.sport-nba { border-color: #e85d04; }
+.sport-mlb { border-color: #1a5fb4; }
+.sport-nhl { border-color: #1d6fa4; }
+.sport-ncaa { border-color: #6a2fa0; }
+.sport-soccer { border-color: #2d8a4e; }
+.sport-general { border-color: #d4a017; }
+
+.sport-nfl-bg { background-color: rgba(200, 57, 43, 0.12); }
+.sport-nba-bg { background-color: rgba(232, 93, 4, 0.12); }
+.sport-mlb-bg { background-color: rgba(26, 95, 180, 0.12); }
+.sport-nhl-bg { background-color: rgba(29, 111, 164, 0.12); }
+.sport-ncaa-bg { background-color: rgba(106, 47, 160, 0.12); }
+.sport-soccer-bg { background-color: rgba(45, 138, 78, 0.12); }
+.sport-general-bg { background-color: rgba(212, 160, 23, 0.12); }
+
+.sport-nfl-text { color: #e05548; }
+.sport-nba-text { color: #f07030; }
+.sport-mlb-text { color: #4a8fd4; }
+.sport-nhl-text { color: #4da0cc; }
+.sport-ncaa-text { color: #9060c0; }
+.sport-soccer-text { color: #50aa70; }
+.sport-general-text { color: #d4a017; }
+
+/* Noise texture overlay */
+.noise::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
