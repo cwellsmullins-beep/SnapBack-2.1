@@ -31,4 +31,4 @@ export interface BriefsResponse {
   cached: boolean;
 }
 
-export type TabId = string;
+export type TabId = "All"| "NFL" | "NBA" | "MLB" | "NHL" | "NCAA" | "Soccer" | "Favorites"; 
