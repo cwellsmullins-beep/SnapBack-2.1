@@ -75,10 +75,11 @@ function slugify(title: string): string {
 function areDuplicates(a: string, b: string): boolean {
   const wa = new Set(slugify(a).split(" "));
   const wb = new Set(slugify(b).split(" "));
-  const intersection = [...wa].filter((w) => wb.has(w)).length;
-  const union = new Set([...wa, ...wb]).size;
+  const intersection = Array.from(wa).filter((w) => wb.has(w)).length;
+  const union = new Set([...Array.from(wa), ...Array.from(wb)]).size;
   return intersection / union > 0.6; // Jaccard similarity > 60%
 }
+
 
 export async function fetchFeed(feed: FeedDef): Promise<RawStory[]> {
   try {
